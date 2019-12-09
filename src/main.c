@@ -9,12 +9,23 @@
 
 int main(int ac, char **av)
 {
-    error_handling(ac, av);
+    int fd;
+    int re;
+    char *buffer;
+    struct stat st;
+
     if (av[1][0] == '-' && av[1][1] == 'h')
     {
         displayhelp();
         return (0);
     }
-    sokoban(av);
+    fd = open(av[1], O_RDONLY);
+    stat(av[1], &st);
+    buffer = malloc(st.st_size + 1);
+    re = read(fd, buffer, st.st_size);
+    error_handling(ac, av, fd, re);
+    sokoban(buffer);
+    close (fd);
+    free (buffer);
     return (0);
 }

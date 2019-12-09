@@ -7,15 +7,15 @@
 
 #include "my.h"
 
-int sokoban(char **av)
+int sokoban(char const *map)
 {
     WINDOW *box;
-    int size = my_strlen(av[1]);
+    int size = my_strlen(map);
 
     initscr();
     while(1) {
         clear();
-        mvprintw(LINES / 2, (COLS / 2) - (size / 2), av[1]);
+        mvprintw(LINES / 2, (COLS / 2) - (size / 2), map);
         refresh();
         if (getch() == 32)
             break;
