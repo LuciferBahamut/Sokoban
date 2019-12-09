@@ -23,7 +23,8 @@ int main(int ac, char **av)
     stat(av[1], &st);
     buffer = malloc(st.st_size + 1);
     re = read(fd, buffer, st.st_size);
-    error_handling(ac, av, fd, re);
+    if (error_handling(ac, av, fd, re) == 1 || error_handling2(buffer) == 1)
+        return (84);
     sokoban(buffer);
     close (fd);
     free (buffer);

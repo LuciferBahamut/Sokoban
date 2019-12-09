@@ -5,6 +5,21 @@
 ** sokoban
 */
 
+int error_handling2(char *m)
+{
+    int i = 0;
+    
+    while (m[i] != '\0')
+    {
+        if (m[i] == '#' || m[i] == 'X' || m[i] == 'P')
+            i++;
+        else if (m[i] == 'O' || m[i] == ' ' || m[i] == '\n')
+            i++;
+        else
+            return (1);
+    }
+}
+
 int error_handling(int ac, char **av, int fd, int re)
 {
     if (av[1][0] == '-' && av[1][1] == 'h')
