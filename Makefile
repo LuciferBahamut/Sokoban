@@ -13,7 +13,10 @@ SRC	=	src/main.c \
 		src/my_putstr.c \
 		src/my_putchar.c \
 		src/sokoban.c \
-		src/my_strlen.c
+		src/my_strlen.c \
+		src/size.c \
+		src/gest_file.c \
+		src/my_split.c
 
 CC	=	gcc
 

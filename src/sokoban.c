@@ -7,19 +7,42 @@
 
 #include "my.h"
 
-int sokoban(char const *map)
+int control(int g)
 {
-    WINDOW *box;
-    int size = my_strlen(map);
+    
+    return (0);
+}
+
+void display(int sc, int sl, char **map, int s)
+{
+    int g;
 
     initscr();
     while(1) {
         clear();
-        mvprintw(LINES / 2, (COLS / 2) - (size / 2), map);
+        if (COLS / 2 < sc || LINES / 2 < sl / 2 )
+            mvprintw(LINES / 2, (COLS / 2) - s, ERROR_SIZE);
+        else {
+            for (int i = 0; i < sl ; i++)
+                mvprintw((LINES / 2) - sl + i, (COLS / 2) - sc, map[i]);
+        }
         refresh();
-        if (getch() == 32)
+        g = getch();
+        //control(g);
+        if (g == SPACE)
+            display(sc, sl, map, s);
+        if (g == ECHAP)
             break;
     }
     endwin();
+}
+
+int sokoban(char **map, char *temp)
+{
+    int size_cols = nb_cols_size(temp) / 2;
+    int size_lines = nb_lines_size(temp);
+    int size = my_strlen(ERROR_SIZE);
+
+    display(size_cols, size_lines, map, size);
     return (0);
 }
