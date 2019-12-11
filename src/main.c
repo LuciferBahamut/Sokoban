@@ -9,8 +9,8 @@
 
 int main(int ac, char **av)
 {
-    int fd;
-
+    if (ac != 2)
+        return (84);
     if (av[1][0] == '-' && av[1][1] == 'h')
     {
         displayhelp();
