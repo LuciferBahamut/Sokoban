@@ -8,7 +8,7 @@
 int error_handling2(char *m)
 {
     int i = 0;
-    
+
     while (m[i] != '\0')
     {
         if (m[i] == '#' || m[i] == 'X' || m[i] == 'P')
@@ -26,7 +26,7 @@ int error_handling(int ac, char **av, int fd, int re)
         return (0);
     if (ac != 2)
         return (1);
-        if (fd == -1)
+    if (fd == -1)
         return (1);
     if (re == 1 || re == 0)
         return (1);

@@ -9,7 +9,6 @@
 
 int control(int g)
 {
-    
     return (0);
 }
 
@@ -28,7 +27,7 @@ void display(int sc, int sl, char **map, int s)
         }
         refresh();
         g = getch();
-        //control(g);
+        control(g);
         if (g == SPACE)
             display(sc, sl, map, s);
         if (g == ECHAP)
