@@ -8,8 +8,12 @@
 #ifndef MY_H
 #define MY_H
 #define SPACE 32
-#define ECHAP 27
+#define ENTER 10
 #define ERROR_SIZE "Invalid size extend window !"
+#define Z 122
+#define S 115
+#define D 100
+#define Q 113
 
 #include <curses.h>
 #include <unistd.h>
@@ -30,5 +34,6 @@ int nb_cols_size(char const *map);
 int nb_lines_size(char const *map);
 int gest_file(int ac, char **av);
 char **my_split(char *src);
+void display(int sc, int sl, char **map, char *src);
 
 #endif
