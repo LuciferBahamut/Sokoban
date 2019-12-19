@@ -13,7 +13,7 @@ int nb_lines_size(char const *map)
         if (map[i] == '\n')
             nb++;
     }
-    return (nb);
+    return (nb + 1);
 }
 
 int nb_cols_size(char const *map)

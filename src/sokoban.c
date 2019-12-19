@@ -13,8 +13,8 @@ void move_p2(char **map, char c, char *temp, int g)
     int sl = nb_lines_size(temp);
 
     for (int i = 2; i < sl - 2; i++)
-        for (int j = 1; j < sc - 1; j++) {
-            if (map[i][j] == 'P' && map[i + 1][j] == ' ' && c == 'u') {
+        for (int j = 0; j < sc; j++) {
+            if (map[i][j] == 'P' && map[i + 1][j] == ' ' && map[i + 1][j] != '#' && c == 'u') {
                 map[i - 1][j] = 'P';
                 map[i][j] = ' ';
                 break;
@@ -68,14 +68,14 @@ void display(int sc, int sl, char **map, char *src)
     char **temp = map;
 
     initscr();
+    keypad(stdscr, TRUE);
     while(1) {
         clear();
         if (COLS / 2 < sc / 2 || LINES / 2 < sl / 2 )
             mvprintw(LINES / 2, (COLS / 2) - s, ERROR_SIZE);
-        else {
+        else
             for (int i = 0; i < sl ; i++)
-                mvprintw((LINES / 2) - sl + i, (COLS / 2) - (sc / 2), map[i]);
-        }
+                mvprintw((LINES / 2) - sl + i, (COLS / 2) - sc / 2, map[i]);
         refresh();
         g = getch();
         if (g == ENTER)
