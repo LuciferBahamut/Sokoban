@@ -14,7 +14,7 @@ void move_p2(char **map, char c, char *temp, int g)
 
     for (int i = 2; i < sl - 2; i++)
         for (int j = 0; j < sc; j++) {
-            if (map[i][j] == 'P' && map[i + 1][j] == ' ' && map[i + 1][j] != '#' && c == 'u') {
+            if (map[i][j] == 'P' && map[i + 1][j] == ' ' && c == 'u') {
                 map[i - 1][j] = 'P';
                 map[i][j] = ' ';
                 break;
