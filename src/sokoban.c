@@ -7,68 +7,24 @@
 
 #include "my.h"
 
-void move_p2(char **map, char c, char *temp, int g)
-{
-    int sc = nb_cols_size(temp);
-    int sl = nb_lines_size(temp);
-
-    for (int i = 2; i < sl - 2; i++)
-        for (int j = 0; j < sc; j++) {
-            if (map[i][j] == 'P' && map[i + 1][j] == ' ' && c == 'u') {
-                map[i - 1][j] = 'P';
-                map[i][j] = ' ';
-                break;
-            }
-            if (map[i][j] == 'P' && map[i - 1][j] == ' ' && c == 'b') {
-                map[i + 1][j] = 'P';
-                map[i][j] = ' ';
-                break;
-            }
-        }
-}
-
-void move_p(char **map, char c, char *temp, int g)
-{
-    int sc = nb_cols_size(temp);
-    int sl = nb_lines_size(temp);
-
-    for (int i = 0; i < sl; i++)
-        for (int j = 0; j < sc; j++) {
-            if (map[i][j] == 'P' && map[i][j - 1] == ' ' && c == 'g') {
-                map[i][j - 1] = 'P';
-                map[i][j] = ' ';
-                break;
-            }
-            if (map[i][j] == 'P' && map[i][j + 1] == ' ' && c == 'd') {
-                map[i][j + 1] = 'P';
-                map[i][j] = ' ';
-                break;
-            }
-        }
-}
-
-void control(int g, char **map, char **temp, char *src)
+void control(int g, char **map, char *src, char **av)
 {
     if (g == KEY_UP || g == Z)
-        move_p2(map, 'u', src, g);
+        move_p(map, 'u', src);
     if (g == KEY_DOWN || g == S)
-        move_p2(map, 'b', src, g);
+        move_p(map, 'b', src);
     if (g == KEY_LEFT || g == Q)
-        move_p(map, 'g', src, g);
+        move_p(map, 'g', src);
     if (g == KEY_RIGHT || g == D)
-        move_p(map, 'd', src, g);
-    if (g == SPACE)
-        sokoban(temp, src);
+        move_p(map, 'd', src);
 }
 
-void display(int sc, int sl, char **map, char *src)
+void window(int sl, char **map, char *src, char **av)
 {
     int g;
-    int s = my_strlen(ERROR_SIZE);
-    char **temp = map;
+    int s;
+    int sc = nb_cols_size(src);
 
-    initscr();
-    keypad(stdscr, TRUE);
     while (1) {
         clear();
         if (COLS / 2 < sc / 2 || LINES / 2 < sl / 2 )
@@ -80,16 +36,26 @@ void display(int sc, int sl, char **map, char *src)
         g = getch();
         if (g == ENTER)
             break;
-        control(g, map, temp, src);
+        if (g == SPACE) {
+            gest_file(av);
+            break;
+        }
+        control(g, map, src, av);
     }
+}
+
+void display(int sl, char **map, char *src, char **av)
+{
+    initscr();
+    keypad(stdscr, TRUE);
+    window(sl, map, src, av);
     endwin();
 }
 
-int sokoban(char **map, char *temp)
+int sokoban(char **map, char *temp, char **av)
 {
-    int size_cols = nb_cols_size(temp);
     int size_lines = nb_lines_size(temp);
 
-    display(size_cols, size_lines, map, temp);
+    display(size_lines, map, temp, av);
     return (0);
 }

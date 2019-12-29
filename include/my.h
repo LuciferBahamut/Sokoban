@@ -29,11 +29,11 @@ int my_strlen(char const *str);
 void displayhelp(void);
 int error_handling(int fd, int re);
 int error_handling2(char *buffer);
-int sokoban(char **map, char *temp);
+int sokoban(char **map, char *temp, char **av);
 int nb_cols_size(char const *map);
 int nb_lines_size(char const *map);
-int gest_file(int ac, char **av);
+int gest_file(char **av);
 char **my_split(char *src);
-void display(int sc, int sl, char **map, char *src);
+void move_p(char **map, char c, char *temp);
 
 #endif

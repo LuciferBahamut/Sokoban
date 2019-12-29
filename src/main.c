@@ -16,7 +16,7 @@ int main(int ac, char **av)
         displayhelp();
         return (0);
     }
-    if (gest_file(ac, av) == 84)
+    if (gest_file(av) == 84)
         return (84);
     return (0);
 }

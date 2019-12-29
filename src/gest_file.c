@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-int gest_file(int ac, char **av)
+int gest_file(char **av)
 {
     int fd;
     int re;
@@ -22,7 +22,7 @@ int gest_file(int ac, char **av)
     if (error_handling(fd, re) == 1 || error_handling2(buffer) == 1)
         return (84);
     map = my_split(buffer);
-    sokoban(map, buffer);
+    sokoban(map, buffer, av);
     close (fd);
     free (buffer);
     return (0);

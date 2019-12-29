@@ -16,7 +16,8 @@ SRC	=	src/main.c \
 		src/my_strlen.c \
 		src/size.c \
 		src/gest_file.c \
-		src/my_split.c
+		src/my_split.c \
+		src/move.c
 
 CC	=	gcc
 
