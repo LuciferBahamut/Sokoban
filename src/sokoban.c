@@ -22,7 +22,7 @@ void control(int g, char **map, char *src, char **av)
 void window(int sl, char **map, char *src, char **av)
 {
     int g;
-    int s;
+    int s = my_strlen(ERROR_SIZE);
     int sc = nb_cols_size(src);
 
     while (1) {
