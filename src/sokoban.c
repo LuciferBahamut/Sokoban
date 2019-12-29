@@ -69,7 +69,7 @@ void display(int sc, int sl, char **map, char *src)
 
     initscr();
     keypad(stdscr, TRUE);
-    while(1) {
+    while (1) {
         clear();
         if (COLS / 2 < sc / 2 || LINES / 2 < sl / 2 )
             mvprintw(LINES / 2, (COLS / 2) - s, ERROR_SIZE);
