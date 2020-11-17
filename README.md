@@ -11,6 +11,6 @@
   <li>Basic collisions and box on targets : 50 % -- 2 / 4</li>
   <li>Intermediate moves and collisions : 50 % -- 3 / 6</li>
   <li>Intermediate maps tests : 25 % -- 1 / 4</li>
-  </li>Intermediate winning and losing conditions : 50 % -- 1 / 2</li>
+  <li>Intermediate winning and losing conditions : 50 % -- 1 / 2</li>
 <p></p>
 <p>Beware of -42 for Epitech students !</p>
