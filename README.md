@@ -1,5 +1,5 @@
 <h1>Sokoban</h1>
-<h3>{EPITECH} -- First year -- second PSU project</h3>
+<h3>{EPITECH} -- First year -- Semester 1-- second PSU project</h3>
 
 <p>1st semester PSU unit part I : Grade C</p>
 
