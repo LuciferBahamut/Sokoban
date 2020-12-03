@@ -1,16 +1,16 @@
-<h1>Sokoban</h1>
-<h3>{EPITECH} -- First year -- Semester 1-- second PSU project</h3>
+# Sokoban
+### {EPITECH} -- First year -- Semester 1-- second PSU project
 
-<p>1st semester PSU unit part I : Grade C</p>
+1st semester PSU unit part I : Grade C
 
-<p>sokoban_2019 -- Without Crash</p>
+|                  Category                  | Percentage | Number of tests | Crash ? |
+|:------------------------------------------:|:----------:|:---------------:|:-------:|
+|           Usage and input checks           |    100 %   |      4 / 4      |    x    |
+|                 Basic moves                |    100 %   |      4 / 4      |    x    |
+|     Basic collisions and box on targets    |    50 %    |      2 / 4      |    x    |
+|      Intermediate moves and collisions     |    50 %    |      3 / 6      |    x    |
+|           Intermediate maps tests          |    25 %    |      1 / 4      |    x    |
+| Intermediate winning and losing conditions |    50 %    |      1 / 2      |    x    |
+|                   **Results**                  |   **62,5 %**   |     15 / 24     |    x    |
 
-<p>Result : 62,5 %</p>
-  <li>Usage and input checks : 100 % -- 4 / 4</li>
-  <li>Basic moves : 100 % -- 4 / 4</li>
-  <li>Basic collisions and box on targets : 50 % -- 2 / 4</li>
-  <li>Intermediate moves and collisions : 50 % -- 3 / 6</li>
-  <li>Intermediate maps tests : 25 % -- 1 / 4</li>
-  <li>Intermediate winning and losing conditions : 50 % -- 1 / 2</li>
-<p></p>
-<p>Beware of -42 for Epitech students !</p>
+Beware of -42 for Epitech students !
