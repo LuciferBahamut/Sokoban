@@ -11,6 +11,6 @@
 |      intermediate moves and collisions     |    50 %    |      3 / 6      |    x    |
 |           intermediate maps tests          |    25 %    |      1 / 4      |    x    |
 | intermediate winning and losing conditions |    50 %    |      1 / 2      |    x    |
-|                 **Results**                | **62,5 %** |   **15 / 24**   |    x    |
+|                 **Results**                | **62,5 %** |   15 / 24   |    x    |
 
 Beware of -42 Epitech students !!!
